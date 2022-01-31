@@ -2,8 +2,8 @@ import Modal from "../Modal";
 import appConfig from "../../../config.json";
 
 import { IoClose } from "react-icons/io5";
-//import { UserContext } from "../../providers/Users";
-//import { PostContext } from "../../providers/Posts";
+import { UserContext } from "../../providers/Users";
+import { PostContext } from "../../providers/Posts";
 import { useState, useContext, useEffect } from "react";
 import { Box, Text, Image, Button } from "@skynexui/components";
 import {
@@ -22,9 +22,9 @@ const MessageList = (props) => {
   const [currentName, setCurrentName] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  //const { deletePost, getPost } = useContext(PostContext);
-  //const { user, getUser } = useContext(UserContext);
-  //const { name, location, avatar_url, html_url, login } = user;
+  const { deletePost, getPost } = useContext(PostContext);
+  const { user, getUser } = useContext(UserContext);
+  const { name, location, avatar_url, html_url, login } = user;
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [open, setOpen] = useState(false);
@@ -36,9 +36,9 @@ const MessageList = (props) => {
     setPlacement(newPlacement);
   };
 
-  /*useEffect(() => {
+  useEffect(() => {
     getUser(currentName);
-  }, [currentName]);*/
+  }, [currentName]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -53,7 +53,7 @@ const MessageList = (props) => {
     );
     props.setListMessage(resetMessage);
 
-    //deletePost(id);
+    deletePost(id);
   };
 
   const openAndCloseModal = (id) => {

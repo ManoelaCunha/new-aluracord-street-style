@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import MessageList from "../components/MessageList";
 
 import { useRouter } from "next/router";
-//import { PostContext } from "../providers/Posts";
+import { PostContext } from "../providers/Posts";
 import { Box, TextField } from "@skynexui/components";
 import { useState, useContext, useEffect } from "react";
 
@@ -14,14 +14,14 @@ const ChatPage = () => {
   const [message, setMessage] = useState("");
   const [listMessage, setListMessage] = useState([]);
 
-  //const { getPost, insertPost } = useContext(PostContext);
+  const { getPost, insertPost } = useContext(PostContext);
 
   const roteamento = useRouter();
   const userLogged = roteamento.query.username;
 
-  /*useEffect(() => {
+  useEffect(() => {
     getPost(setListMessage);
-  }, []);*/
+  }, []);
 
   const handleNewMessage = (newMessage) => {
     const currentMessage = {
@@ -29,7 +29,7 @@ const ChatPage = () => {
       texto: newMessage,
     };
 
-    //insertPost(currentMessage);
+    insertPost(currentMessage);
 
     setMessage("");
   };
