@@ -217,6 +217,8 @@ const MessageList = (props) => {
                       {new Date().toLocaleDateString()}
                     </Text>
                   </Box>
+
+                  {/* Botão de excluir menssagem --> só aparece na mensagem do usuário logado! */}
                   {message.de === props.userLogged && (
                     <IoClose
                       onClick={() => {
@@ -228,7 +230,9 @@ const MessageList = (props) => {
                       hover={{ color: "red" }}
                     />
                   )}
+                  {/* Botão de excluir mensagem */}
                 </Box>
+
                 {message.texto?.startsWith(":sticker:") ? (
                   <Image
                     styleSheet={{

@@ -148,7 +148,10 @@ const HomePage = () => {
                     backgroundColor: appConfig.theme.colors.neutrals[900],
                     padding: "3px 10px",
                     borderRadius: "1000px",
-                    hover: { color: appConfig.theme.colors.primary[400] },
+                    hover: {
+                      cursor: "pointer",
+                      color: appConfig.theme.colors.primary[400],
+                    },
                   }}
                 >
                   {userName}
