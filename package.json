@@ -4,10 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
     "@skynexui/components": "^1.24.3",
+    "@supabase/supabase-js": "^1.29.4",
+    "axios": "^0.25.0",
     "next": "^12.0.9",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-modal": "^3.14.4"
   },
   "scripts": {
     "dev": "next dev",
